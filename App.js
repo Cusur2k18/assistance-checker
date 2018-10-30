@@ -1,21 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, SafeAreaView, StyleSheet} from 'react-native';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
-  }
-}
+import { Auth, Scanner } from './src/pages/'
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    flex: 1
+  }
+})
+
+export default class App extends Component {
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
+          <Auth />
+        </View>
+      </SafeAreaView>
+    );
+  }
+}
