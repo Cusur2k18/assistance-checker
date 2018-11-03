@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, SafeAreaView, StyleSheet} from 'react-native';
 
-import { Auth, Scanner } from './src/pages/'
+import Routes from './routes'
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +14,7 @@ export default class App extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.container}>
-          <Auth />
+          <Routes />
         </View>
       </SafeAreaView>
     );

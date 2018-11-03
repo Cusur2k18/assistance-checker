@@ -14,22 +14,22 @@ const styles = StyleSheet.create({
 })
 
 export default class Auth extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       username: '',
-      password: '' 
+      password: ''
     };
   }
 
-  onLogin = () => {
-    console.log('do Login')
-    AuthService.login(this.state)
-  }
-
-  calis = () => {
-    AuthService.calis()
+  onLogin = async () => {
+    console.log('do sadf', this.props)
+    const result = await AuthService.login(this.state)
+    if (result) {
+      this.props.navigation.navigate('Scanner')
+    } else {
+      // Show error
+    }
   }
 
   render() {
