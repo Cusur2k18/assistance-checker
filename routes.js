@@ -12,7 +12,7 @@ export default createStackNavigator(
   }, 
   {
     navigationOptions: {
-      header: null,
+      header: null
     },
     initialRouteName: 'Scanner'
   }
