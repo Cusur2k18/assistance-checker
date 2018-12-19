@@ -2,6 +2,8 @@ import React from 'react';
 import { Button, Platform, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { BarCodeScanner, Permissions } from 'expo';
 
+import EnrollmentService from '../../util/services/enrollment'
+
 export default class App extends React.Component {
   state = {
     hasPermissionsGranted: null,
@@ -14,8 +16,21 @@ export default class App extends React.Component {
     this.setState({ hasPermissionsGranted: (status === 'granted') });
   }
 
-  onCodeRead = ({ data }) => {
+  onCodeRead = async ({ data }) => {
     this.setState({ showInfo: true })
+    alert(data)
+    setTimeout(() => {
+      this.setState({ showInfo: false })
+    }, 3000)
+    // const { enrollId } = JSON.parse(data)
+    // const result = await EnrollmentService.checkAssistance(enrollId)
+    // if (result) {
+    //   alert('Asistencia marcada! Bienvenido al evento!')
+    //   this.setState({ showInfo: true })
+    // } else {
+    //   alert('Upps! algo ocurrio, verifica con el administrador')
+    //   this.setState({ showInfo: true })
+    // }
   }
 
   render() {

@@ -53,9 +53,6 @@ export default class Auth extends Component {
         <TouchableOpacity onPress={this.onLogin}>
           <Text>Entrar</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.calis}>
-          <Text>Calar</Text>
-        </TouchableOpacity>
       </View>
     );
   }
